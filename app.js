@@ -1,3 +1,4 @@
+const cors = require('cors');
 const express = require('express');
 const connectDB = require('./src/config/db'); // changed from sequelize
 const bodyParser = require('body-parser');
@@ -6,6 +7,7 @@ const userRoutes = require('./src/routes/user.routes');
 const app = express();
 
 connectDB(); // connect to MongoDB Atlas
+app.use(cors());
 
 app.use(bodyParser.json());
 
